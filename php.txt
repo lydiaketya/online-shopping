@@ -1,0 +1,56 @@
+<div class="row"> <div align="right">
+</div></div>
+
+<div id="site_content"> <div class="sidebar">
+<table width="200"><thead><tr class='empHead1'>
+
+<td width="550"><font size="3"><b>Manager task</font></b></td>
+</thead></table>
+
+<b> <ul>
+
+<li ><a href="users.php"><img src="img.jpg" width=20px height=20px><font color="blue">Manage User</font></a></li>
+
+<li><a href="departments.php"><img src="img.jpg" width=20px height=20px><font color="blue">Manage Departments</font></a></li>
+
+<li><a href="suppliers.php"><img src="img.jpg" width="20px" height="20px"><font color="blue">Manage Suppliers</font></a></li>
+<li><a href="session.php"><img src="img.jpg" width="20px" height="20px"><font color="blue">Manage Userlogs</font></a></li>
+
+<li><a href="database/backupDB.php"><img src="img.jpg" width="20px" height="20px"><font color="blue">Backup Database</font></a></li>
+
+<li><a href="category.php"><img src="img.jpg" width="20px" height="20px"><font color="blue">Item Categories</font></a></li>
+
+<li><a href="units.php"><img src="img.jpg" width="20px" height="20px"><font color="blue">Units of Measure</font></a></li>
+</ul></b>
+
+</div>
+<div class="row">
+<div id="site_content"> <div class="section">
+
+
+
+<table width="800"><thead><tr class='empHead1'>
+<td width="550"><font size="2.5">STORE'S STOCK</font></td>
+
+</thead></table>
+<form action="inventory.php" method="post"> SELECT STORE<select name="dpt">
+<?php $query1 = mysql_query("select * from department ")or die(mysql_error());
+
+while($row1 = mysql_fetch_array($query1)){
+
+?>
+<option value="<?php echo $row1['description']; ?>"><?php echo $row1['description'];	?></option>
+
+<?php } ?></select>
+<input type="submit" name="submit" value="Go" style="text-align:; height:20px; width:50px; background:#C8C8C8">
+
+<img src="style/google_custom_search.png" class="search1" height="30" />SEARCH ITEM
+<input type="text" size="35" align="right" class="search1" placeholder="SEARCH..." name="filter" value="" id="filter"/>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue"><a href="stock.php">ADD New Item</a></font>
+</form>
+
+<table><?phpnclude('connection.php');
+
+$user_query=mysql_query("select * from received_items")or die(mysql_error()); action='delmultipleUsers.php' onsubmit='return confirmdelete();'>";
+echo"	<thead>
